@@ -3,6 +3,12 @@
   <div class="row">
     <div class="col-8 mx-auto">
       <h1>Editing Book</h1>
+      <% if @user.errors.any? %>
+        <strong><%= @user.errors.count %>error prohibited this obj from being saved:</strong><br>
+        <% @user.errors.full_messages.each do |message| %>
+          <%= message %>
+        <%end%>
+      <%end%>
       <%= form_with model:@user, local:true do |f| %> 
         <form>
           <div class="form-group">

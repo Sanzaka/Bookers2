@@ -1,8 +1,13 @@
-<h1>Books-edit</h1>
 <div class="container">
   <div class="row">
     <div class="col-8 mx-auto">
       <h1>Editing Book</h1>
+      <% if @book.errors.any? %>
+        <strong><%= @book.errors.count %>error prohibited this obj from being saved:</strong>
+        <% @book.errors.full_messages.each do |message| %>
+          <%= message %>
+        <%end%>
+      <%end%>
       <%= form_with model:@book, local:true do |f| %> 
         <form>
           <div class="form-group">

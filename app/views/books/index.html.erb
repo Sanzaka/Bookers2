@@ -1,4 +1,9 @@
-<h1>books-index</h1>
+<% if @book.errors.any? %>
+  <strong><%= @book.errors.count %>error prohibited this obj from being saved:</strong>
+  <% @book.errors.full_messages.each do |message| %>
+    <%= message %>
+  <%end%>
+<%end%>
 <div class="container">
   <div class="row">
     <%= render "books/list", new_book:@new_book %>
