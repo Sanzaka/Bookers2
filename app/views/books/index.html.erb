@@ -27,9 +27,7 @@
                 <%end%>
               </td>
               <td>
-                <%= link_to book_path(book.id) do %>
-                  <%= book.title %>
-                <%end%>
+                <%= link_to book.title, book_path(book.id) %>
               </td>
               <td><%= book.body %></td>
             </tr>
