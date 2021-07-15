@@ -1,19 +1,19 @@
 <div class="col-md-3">
   <h2>User info</h2>
-  <%= attachment_image_tag current_user, :profile_image,format:"jpeg", fallback:"no_image.jpg", size:"100x100"%>
+  <%= attachment_image_tag side_user, :profile_image,format:"jpeg", fallback:"no_image.jpg", size:"100x100"%>
   <table class="table">
     <tbody>
       <tr>
         <th>name</th>
-        <th><%= current_user.name %></th>
+        <th><%= side_user.name %></th>
       </tr>
       <tr>
         <th>introduction</th>
-        <th><%= current_user.introduction %></th>
+        <th><%= side_user.introduction %></th>
       </tr>
     </tbody>
   </table>
-  <%= link_to edit_user_path(current_user.id), class:"btn btn-outline-secondary btn-block btn-light" do %>
+  <%= link_to edit_user_path(side_user.id), class:"btn btn-outline-secondary btn-block btn-light" do %>
     <i class="fas fa-user-cog"></i>
   <%end%>
   <h2>New book</h2>
