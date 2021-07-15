@@ -10,7 +10,6 @@
         <%end%>
       <%end%>
       <%= form_with model:@user, local:true do |f| %> 
-        <form>
           <div class="form-group">
             <label>Name</label><br>
             <%= f.text_field :name, class:"form-control" %>
@@ -22,9 +21,8 @@
           <div class="form-group">
             <label>Introduction</label><br>
             <%= f.text_area :introduction, class:"form-control" %><br>
-            <%= f.submit "Update Book",class:"btn btn-success"%>
+            <%= f.submit "Update User",class:"btn btn-success"%>
           </div>
-        </form>
       <%end%>
     </div>
   </div>

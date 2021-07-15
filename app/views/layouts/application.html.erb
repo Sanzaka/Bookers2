@@ -19,29 +19,29 @@
         <ul class="navbar-nav ml-auto">
           <% if user_signed_in? %>
             <li class="nav-item active p-2">
-              <i class="fas fa-home"></i><%= link_to " Home", user_path(current_user.id) %>
+              <p class="fas fa-home text-light"><%= link_to user_path(current_user.id) do%>Home<%end%></p>
             </li>
             <li class="nav-item p-2">
-              <i class="fas fa-users text-light"></i><%= link_to " Users", users_path %>
+              <p class="fas fa-users text-light"><%= link_to "Users", users_path %></p>
             </li>
             <li class="nav-item p-2">
-              <i class="fas fa-book-open text-light"></i><%= link_to " Books", books_path%>
+              <p class="fas fa-book-open text-light"><%= link_to "Books", books_path%></p>
             </li>
             <li class="nav-item p-2">
-              <i class="fas fa-sign-out-alt text-light"></i><%= link_to " logout", destroy_user_session_path, method: :delete%>
+              <p class="fas fa-sign-out-alt text-light"><%= link_to "logout", destroy_user_session_path, method: :delete%></p>
             </li>
           <%else%>
             <li class="nav-item active p-2">
-              <i class="fas fa-home text-light"></i><%= link_to " Home", home_top_path%>
+              <a class="fas fa-home text-light" href="/">Home</a>
             </li>
             <li class="nav-item p-2">
-              <i class="fas fa-link text-light"></i><%= link_to " About", home_about_path %>
+              <a class="fas fa-link text-light" href="/home/about">About</a>
             </li>
             <li class="nav-item p-2">
-              <i class="fas fa-user-plus text-light"></i><%= link_to " sign up", new_user_registration_path %>
+              <a class="fas fa-user-plus text-light" href="/users/sign_up">sign up</a>
             </li>
             <li class="nav-item p-2">
-              <i class="fas fa-sign-in-alt text-light"></i><%= link_to " login", new_user_session_path %>
+              <a class="fas fa-sign-in-alt text-light" href="/users/sign_in">login</a>
             </li>
           <%end%>
         </ul>
