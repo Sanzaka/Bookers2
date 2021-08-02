@@ -1,0 +1,5 @@
+<% if @users.count == 0 %>
+  このユーザーは誰もフォローしていません。
+<%else%>
+  <%= render "followlist", users:@users %>
+<%end%>
