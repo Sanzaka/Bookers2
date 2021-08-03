@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  range: 1
+  search: 1
+  word: MyText
+
+two:
+  range: 1
+  search: 1
+  word: MyText
