@@ -26,53 +26,19 @@
             </td>
             <% end %>
           <tr>
-            <td colspan="4">
+            <td>
             コメント数：<%= @book.book_comments.count %>
             </td>
-          </tr>
-          </tr>
-          <% @book.book_comments.each do |c|%>
-          <tr>
-            <td colspan="1">
-              コメント
-            </td>
-            <td>
-              <%= link_to user_path(c.user.id) do %>
-                <%= attachment_image_tag(c.user, :profile_image,format:"jpg", fallback:"no_image.jpg", size:"60x60")%>
-                <%= c.user.name %>
-              <%end%>
-            </td>
-            <td>
-              <%= c.comment %>
-            </td>
-            <td>
-            <% if c.user == current_user %>
-              <%= link_to "destroy", book_book_comments_path(c.book_id), method: :delete %>
-            <%end%>
-            </td>
-          </tr>
-          <%end%>
-          <tr>
-          <td>
-          <%if @book.favorited_by?(current_user) %>
-            <p>
-              <%= link_to book_favorites_path(@book.id), method: :delete do %>
-                ❤<%= @book.favorites.count %>いいね
-              <%end%>
-            </p>
-            <%else%>
-            <p>
-              <%= link_to book_favorites_path(@book.id), method: :post do %>
-                ♡<%= @book.favorites.count %>いいね
-              <%end%>
-            </p>
-          <%end%>
+            <td class="favorites_buttons_<%=@book.id%>">
+            <%= render partial: "favorites/favorite", locals: {book: @book} %>
           </td>
-          <td>
-            <%= form_with(model:[@book,@comment], local:true) do |f| %>
-              <%= f.text_area :comment, rows:"3", placeholder: "コメントをここに" %>
-              <%= f.submit "コメントを送信" %>
-            <%end%>
+          </tr>
+          <tr class="comments_area">
+            <%= render "comments/comment", book: @book %>
+          </tr>
+          <tr>
+          <td class="comment_form">
+            <%= render "comments/form", book: @book, comment: @comment %>
           </td>
           </tr>
       </table>

@@ -1,0 +1,18 @@
+<% book.book_comments.each do |c|%>
+  <tr>
+    <td>
+      <%= link_to user_path(c.user.id) do %>
+        <%= attachment_image_tag(c.user, :profile_image,format:"jpg", fallback:"no_image.jpg", size:"60x60")%>
+        <%= c.user.name %>
+      <%end%>
+    </td>
+    <td>
+      <%= c.comment %>
+    </td>
+    <td>
+      <% if c.user == current_user %>
+        <%= link_to "destroy", book_book_comment_path(book, c), method: :delete %>
+      <%end%>
+    </td>
+  </tr>
+<%end%>
