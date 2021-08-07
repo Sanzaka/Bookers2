@@ -27,19 +27,19 @@
             <% end %>
           <tr>
             <td>
-            コメント数：<%= @book.book_comments.count %>
+              コメント数：<%= @book.book_comments.count %>
             </td>
             <td class="favorites_buttons_<%=@book.id%>">
-            <%= render partial: "favorites/favorite", locals: {book: @book} %>
-          </td>
+              <%= render partial: "favorites/favorite", locals: {book: @book} %>
+            </td>
           </tr>
-          <tr class="comments_area">
-            <%= render "comments/comment", book: @book %>
+          <tr id="comment_index">
+            <%= render "book_comments/comment", book: @book%>
           </tr>
           <tr>
-          <td class="comment_form">
-            <%= render "comments/form", book: @book, comment: @comment %>
-          </td>
+            <td id="form">
+              <%= render "book_comments/form", book: @book, comment: @comment %>
+            </td>
           </tr>
       </table>
     </div>
