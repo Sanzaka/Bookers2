@@ -33,15 +33,13 @@
               <%= render partial: "favorites/favorite", locals: {book: @book} %>
             </td>
           </tr>
-          <tr id="comment_index">
-            <%= render "book_comments/comment", book: @book%>
-          </tr>
-          <tr>
-            <td id="form">
-              <%= render "book_comments/form", book: @book, comment: @comment %>
-            </td>
-          </tr>
       </table>
+      <div id="comment_index">
+        <%= render "book_comments/comment", book: @book%>
+      </div>
+      <div id="form">
+        <%= render "book_comments/form", book: @book, comment: @comment %>
+      </div>
     </div>
   </div>
 </div>
