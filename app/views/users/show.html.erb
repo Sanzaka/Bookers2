@@ -35,6 +35,42 @@
           <%end%>
         </tbody>
       </table>
+
+      <!--投稿数をデータとして表示-->
+      <h4>投稿数データ</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">本日の投稿数</th>
+            <th scope="col">前日の投稿数</th>
+            <th scope="col">前日比</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @today.count %></td>
+            <td><%= @yesterday.count %></td>
+            <td><%= @compare_day %></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">今週の投稿数</th>
+            <th scope="col">前週の投稿数</th>
+            <th scope="col">前週比</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @this_week.count %></td>
+            <td><%= @last_week.count %></td>
+            <td><%= @compare_week %></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
