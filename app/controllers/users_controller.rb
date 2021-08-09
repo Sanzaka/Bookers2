@@ -30,6 +30,23 @@ class UsersController < ApplicationController
     else
       @compare_week = "#{(@this_week.count / @last_week.count) * 100}" + "%"
     end
+    
+    # 過去７日分の投稿数
+    @two_days_ago = @user.books.created_two_days_ago
+    @three_days_ago = @user.books.created_three_days_ago
+    @four_days_ago = @user.books.created_four_days_ago
+    @five_days_ago = @user.books.created_five_days_ago
+    @six_days_ago = @user.books.created_six_days_ago
+    @seven_days_ago = @user.books.created_seven_days_ago
+    
+    # gon用（javascriptへ受け渡すデータを記述）
+    gon.today = @today.count
+    gon.yesterday = @yesterday.count
+    gon.two_days_ago = @two_days_ago.count
+    gon.three_days_ago = @three_days_ago.count
+    gon.four_days_ago = @four_days_ago.count
+    gon.five_days_ago = @five_days_ago.count
+    gon.six_days_ago = @six_days_ago.count
   end
   
   def edit

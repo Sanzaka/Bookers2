@@ -71,6 +71,36 @@
           </tr>
         </tbody>
       </table>
+      <hr>
+      
+      <h4>７日間分の投稿数</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">６日前</th>
+            <th scope="col">５日前</th>
+            <th scope="col">４日前</th>
+            <th scope="col">３日前</th>
+            <th scope="col">２日前</th>
+            <th scope="col">１日前</th>
+            <th scope="col">今日</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @six_days_ago.count %></td>
+            <td><%= @five_days_ago.count %></td>
+            <td><%= @four_days_ago.count %></td>
+            <td><%= @three_days_ago.count %></td>
+            <td><%= @two_days_ago.count %></td>
+            <td><%= @yesterday.count %></td>
+            <td><%= @today.count %></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <canvas id="myChart" width="400" height="400"></canvas>
+      <script>draw_graph();</script>
     </div>
   </div>
 </div>

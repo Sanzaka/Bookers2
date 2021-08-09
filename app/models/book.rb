@@ -31,7 +31,19 @@ class Book < ApplicationRecord
   
   # created_yestarday = 昨日投稿されたbookを取得。
   scope :created_yesterday, -> {where(created_at: Time.current.yesterday.all_day)}
-    
+  # 2日前のbook
+  scope :created_two_days_ago, -> {where(created_at: Time.current.ago(2.days).all_day)}
+  # ３日前のbook
+  scope :created_three_days_ago, -> {where(created_at: Time.current.ago(3.days).all_day)}
+  # ４日前のbook
+  scope :created_four_days_ago, -> {where(created_at: Time.current.ago(4.days).all_day)}
+  # 5日前のbook
+  scope :created_five_days_ago, -> {where(created_at: Time.current.ago(5.days).all_day)}
+  # 6日前のbook
+  scope :created_six_days_ago, -> {where(created_at: Time.current.ago(6.days).all_day)}
+  # 7日前のbook
+  scope :created_seven_days_ago, -> {where(created_at: Time.current.ago(7.days).all_day)}
+  
   # created_this_week = 今週投稿されたbookを取得
   scope :created_this_week, -> {where(created_at: Time.current.all_week)}
   
