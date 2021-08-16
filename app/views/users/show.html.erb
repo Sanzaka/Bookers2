@@ -101,6 +101,14 @@
       
       <canvas id="myChart" width="400" height="200"></canvas>
       <script>draw_graph();</script>
+      
+      <!--日付検索による投稿数表示（非同期）-->
+      <%= form_with url: "search_books_path", method: :get do |f| %>
+        <%= f.date_field :date, value: Time.now.strftime("%Y-%m-%d") %>
+        <%= f.submit %>
+      <%end%>
+      <!--検索する日付のモデルを作成して、値を保存し、そこから検索する方法-->
+      <div id="search_books"></div>
     </div>
   </div>
 </div>

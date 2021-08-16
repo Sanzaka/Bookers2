@@ -1,0 +1,2 @@
+class SearchBook < ApplicationRecord
+end

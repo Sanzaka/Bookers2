@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resource :favorites, only:[:create, :destroy]
     resources :book_comments, only:[:create, :destroy]
   end
+  get "search_books" => "search_books#index", as:"search_books"
   get "search" => "searches#search", as:"search"
 end
